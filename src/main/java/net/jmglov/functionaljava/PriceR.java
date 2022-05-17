@@ -1,11 +1,8 @@
+/**
+ * Models a price (amount in minor units and currency) as a record
+ */
+
 package net.jmglov.functionaljava;
 
-public record PriceR(long amount, String currency) {
-    public PriceR applyVAT() {
-        return new PriceR(amount + Math.round(amount * VAT.rate(currency)), currency);
-    }
-
-    public boolean hasVAT() {
-        return VAT.rate(currency) > 0;
-    }
+public record PriceR() {
 }
